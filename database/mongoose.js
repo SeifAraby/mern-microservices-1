@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // MongoDB connection URI with username and password
-const uri = `mongodb://admin:admin123@localhost:27017/microservices-test`;
+const uri = `mongodb://admin:admin123@mern-microservices-1-db:27017/microservices-test`;
 
 mongoose.Promise = global.Promise;
 mongoose.connect(uri, {
