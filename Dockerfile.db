@@ -1,5 +1,10 @@
 FROM mongo:latest
 
-EXPOSE 27017
+# Copy the init-db.sh script into the container
+COPY init-db.sh /usr/src/init-db.sh
 
-CMD ["mongod"]
+# Make the script executable
+RUN chmod +x /usr/src/init-db.sh
+
+# Run the script when the container starts up
+CMD ["/bin/sh", "/usr/src/init-db.sh"]
