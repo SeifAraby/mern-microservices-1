@@ -1,8 +1,7 @@
 FROM mongo:latest
 
 # Install the MongoDB client tools
-RUN apt-get update && \
-    apt-get install -y mongodb-clients
+RUN apt-get update
 
 # Copy the init-db.sh script into the container
 COPY init-db.sh /usr/src/init-db.sh
