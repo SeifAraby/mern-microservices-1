@@ -13,4 +13,4 @@ EXPOSE 27017
 RUN chmod +x /usr/src/init-db.sh
 
 # Run the script when the container starts up
-CMD ["/bin/bash", "/usr/src/init-db.sh"]
+CMD ["/bin/sh", "/usr/src/init-db.sh"]
