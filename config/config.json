@@ -1,17 +1,17 @@
 {
   "test": {
     "PORT": 5000,
-    "MONGODB_URI": "mongodb://localhost:27017/mernMicroservicesTest",
+    "MONGODB_URI": "mongodb://mern-microservices-1-db:27017/mernMicroservicesTest",  // Change localhost to container name
     "JWT_SECRET": "test_secret"
   },
   "development": {
     "PORT": 5000,
     "ELECTRON_DISABLE_SECURITY_WARNINGS":true,
-    "MONGODB_URI": "mongodb://localhost:27017/mernMicroservices",
+    "MONGODB_URI": "mongodb://mern-microservices-1-db:27017/mernMicroservices",  // Change localhost to container name
     "JWT_SECRET": "development_secret"
   },
   "production": {
-    "MONGODB_URI": "mongodb://localhost:27017/mernMicroservices",
+    "MONGODB_URI": "mongodb://mern-microservices-1-db:27017/mernMicroservices",  // Change localhost to container name
     "JWT_SECRET": "production_secret"
   }
 }
