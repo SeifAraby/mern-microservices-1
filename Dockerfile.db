@@ -1,7 +1,12 @@
 FROM mongo:latest
 
-# Install the MongoDB client tools
-RUN apt-get update
+# Install the MongoDB client tools manually
+RUN apt-get update && \
+    apt-get install -y wget && \
+    wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add - && \
+    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/5.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-5.0.list && \
+    apt-get update && \
+    apt-get install -y mongodb-org-tools
 
 # Copy the init-db.sh script into the container
 COPY init-db.sh /usr/src/init-db.sh
