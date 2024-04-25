@@ -1,0 +1,32 @@
+version: '3'
+services:
+  db:
+    container_name: mern-db      
+    image: mern-microservices-1-db
+    ports:
+      - '27017:27017'
+    networks:
+      - mern-microservices-1-network
+  backend:
+    container_name: mern-backend
+    image: mern-microservices-1-backend
+    ports:
+      - '5000:5000'
+    depends_on:
+      - db
+    environment:
+      - MONGODB_URI=mongodb://mern-db:27017/mern-test-1    
+    networks:
+      - mern-microservices-1-network
+  frontend:
+    container_name: mern-frontend      
+    image: mern-microservices-1-frontend
+    ports:
+      - '80:80'
+    networks:
+      - mern-microservices-1-network
+
+networks:
+  mern-microservices-1-network:
+    external:
+      name: mern-microservices-1-network
