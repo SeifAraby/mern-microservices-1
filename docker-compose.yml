@@ -20,12 +20,8 @@ services:
     depends_on:
       - mongo
     environment:
-<<<<<<< HEAD
       - MONGODB_URI=mongodb://root:example@mern-db:27017/microservices-test
-=======
       - NODE_ENV=development
-      - MONGODB_URI=mongodb://root:example@mongo:27017/microservices-test
->>>>>>> 712f8c2ce6c5c39ea4c1d12bd316da2dc220ac18
     networks:
       - mern-microservices-1-network
   frontend:
