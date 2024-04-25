@@ -1,17 +1,17 @@
 {
   "test": {
     "PORT": 5000,
-    "MONGODB_URI": "mongodb://mern-microservices-1-db:27017/mernMicroservicesTest",  
+    "MONGODB_URI": "mongodb://root:example@mongo:27017/microservices-test",  
     "JWT_SECRET": "test_secret"
   },
   "development": {
     "PORT": 5000,
     "ELECTRON_DISABLE_SECURITY_WARNINGS":true,
-    "MONGODB_URI": "mongodb://mern-microservices-1-db:27017/mernMicroservices",  
+    "MONGODB_URI": "mongodb://root:example@mongo:27017/microservices-test",  
     "JWT_SECRET": "development_secret"
   },
   "production": {
-    "MONGODB_URI": "mongodb://mern-microservices-1-db:27017/mernMicroservices",  
+    "MONGODB_URI": "mongodb://root:example@mongo:27017/microservices-test",  
     "JWT_SECRET": "production_secret"
   }
 }
