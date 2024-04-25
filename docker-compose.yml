@@ -1,26 +1,32 @@
 version: '3'
 services:
-  db:
-    container_name: mern-db      
-    image: mern-microservices-1-db
+  mongo:
+    container_name: mern-db
+    image: mongo
+    restart: always
     ports:
       - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
     networks:
       - mern-microservices-1-network
   backend:
     container_name: mern-backend
     image: mern-microservices-1-backend
+    restart: always
     ports:
       - '5000:5000'
     depends_on:
-      - db
+      - mongo
     environment:
-      - MONGODB_URI=mongodb://mern-db:27017/mern-test-1    
+      - MONGODB_URI=mongodb://root:example@mongo:27017/microservices-test
     networks:
       - mern-microservices-1-network
   frontend:
     container_name: mern-frontend      
     image: mern-microservices-1-frontend
+    restart: always
     ports:
       - '80:80'
     networks:
